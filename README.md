@@ -16,7 +16,7 @@ first and then get to work.
 ## Usage
 `$ vizf [options...] path pattern`
 
-This script calls Fzf with multi-selection enabled, so you can hit `<Tab>` to
+This script calls fzf with multi-selection enabled, so you can hit `<Tab>` to
 select multiple files. If given a path like `~/Code`, fzf will match only on
 files and beneath that path, e.g., the `/foo` in `~/Code/foo`.
 
