@@ -1,8 +1,11 @@
 # vizf
-A script to fuzzy-find file(s) using [fd](https://github.com/sharkdp/fd) with
-[fzf](https://github.com/junegunn/fzf) and open them for editing.
+A script to fuzzy-find file(s) using
+[bat](https://github.com/sharkdp/bat),
+[fd](https://github.com/sharkdp/fd),
+and[fzf](https://github.com/junegunn/fzf)—then open them for editing.
 
 ## Dependencies
+- bat
 - fdf
 - fzf
 - Tcl
