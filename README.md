@@ -23,6 +23,9 @@ This script calls fzf with multi-selection enabled, so you can hit `<Tab>` to
 select multiple files. If given a path like `~/Code`, fzf will match only on
 files and beneath that path, e.g., the `/foo` in `~/Code/foo`.
 
+By default, vizf will try to open files with your `$VISUAL` editor, but
+will fall back to `vi`.
+
 I tend to bind shell abbreviations like `vin` to `vizf ~/.config/nvim/`.
 
 ## Install
