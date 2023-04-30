@@ -1,7 +1,7 @@
 #!/usr/bin/env tclsh
 #//#
 # This file provides a script to fuzzy-find file(s)
-# using fd(1) with fzf(1) and open them for editing.
+# using bat(1), fd(1), and fzf(1)—then open them for editing.
 #
 # @author nat-418
 # @version 0.1.0 
@@ -50,6 +50,7 @@ proc parseCLI {env argv help version} {
         set editor vi
     }
 
+    checkDependency bat
     checkDependency $editor
     checkDependency fd
     checkDependency fzf
@@ -95,9 +96,15 @@ proc fuzzyFind {editor path pattern} {
     lappend fzf_options --multi
     lappend fzf_options --nth=$first..-1
     lappend fzf_options --scheme=path
+    lappend fzf_options [subst [string trim {
+        --preview=bat\ --color=always\ --theme=gruvbox-dark\ --style=snip\ {}
+    }]]
+    lappend fzf_options --preview-window=top
 
     try {
-        set selection [exec fzf {*}$fzf_options << $files 2>@ stderr]
+        set selection [
+            exec fzf {*}$fzf_options << $files 2>@ stderr
+        ]
     } on error {error_message} {
         if {$error_message eq "child process exited abnormally"} {
             # Don't alert the user that they Escape'd out of FZF
