@@ -4,12 +4,12 @@
 # using bat(1), fd(1), and fzf(1)—then open them for editing.
 #
 # @author nat-418
-# @version 0.1.0 
+# @version 0.1.1
 #//#
 
 package require Tcl 8.6
 
-set version 0.1.0
+set version 0.1.1
 
 set help [string trim [subst -nocommands {
 vizf v$version -- Fuzzy-find and open files with vi/\$VISUAL
@@ -22,8 +22,8 @@ Options:
   -v, --version    Show version number
 
 Note:
-  vizf depends on fd(1) and fzf(1). Both path and pattern are passed to fd,
-  and the pattern syntax is described in detail here:
+  vizf depends on bat(1), fd(1), and fzf(1). Both path and pattern
+  are passed to fd, and the pattern syntax is described in detail here:
   https://docs.rs/regex/1.0.0/regex/#syntax
 }]]
 
