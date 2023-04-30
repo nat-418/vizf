@@ -2,7 +2,7 @@
 A script to fuzzy-find file(s) using
 [bat](https://github.com/sharkdp/bat),
 [fd](https://github.com/sharkdp/fd),
-and[fzf](https://github.com/junegunn/fzf)—then open them for editing.
+and [fzf](https://github.com/junegunn/fzf)—then open them for editing.
 
 ## Dependencies
 - bat
